@@ -78,7 +78,7 @@ fi
 
 
 
-3 A)-TO WRITE A SHELL SCRIPT TO FIND FACTORIAL OF GIVEN NUMBER USING LOOP:[opmtherla]
+3 A)-SUM OF N NUMBERS USING WHILE LOOP
 
 echo "Enter the number : "
 read n
@@ -98,7 +98,7 @@ echo "sum = $sum"
 
 
 
-                                                                                              X-FACTORIAL USING FOR LOOP-X
+                                                                                              X-SUM OF N NUMBER USING FOR LOOP-X
 
 
 
@@ -108,7 +108,7 @@ echo "sum = $sum"
 
 
 
-3 B)-FIND THE SUM OF NUMBER N USING LOOP(factorial):[op therla]
+3 B)- FACTORIAL OF A GIVEN NUMBER
 
 
 echo "Enter the number : "
@@ -126,7 +126,7 @@ echo "Factorial = $fact"
 
 
 
-                                                                                              X-SUM OF NUMBER-X
+                                                                                              X-FACTORIAL-X
 
 
 
@@ -204,7 +204,7 @@ done
 4 A)-FILE HANDLING OF UPPER TO LOWER CASE:
 
 
-touch ELF.txt
+
 echo "Enter the Filename"
 read filename
 if [  !  -f  $filename ];
