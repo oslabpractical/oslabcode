@@ -1,0 +1,348 @@
+2(a)string and commands numerical handline:
+
+echo “Enter two string”
+read a
+read b
+if [ -z $a ]
+then 
+echo “ First String is empty: Null String”
+fi
+if [ -z $b ]
+then 
+echo “ Second String is empty: Null String”
+fi
+if [ $a = $b ]
+then 
+echo “Strings are equal: strings Matched”
+else
+echo “Strings are not equal: Strings not match”
+fi
+
+
+
+
+
+                                                                                              X-X
+
+
+
+
+2(b)shell script to extract 1st and last:
+
+a="abcdef"
+first="${a:0:1}"
+last="${a: -1}"
+echo "$first"
+echo "$last"
+
+
+
+
+
+                                                                                              
+
+
+
+
+
+
+2(c) pallindrome
+
+echo Enter the number 
+read n 
+a=$n 
+num=0 
+while [ $n -gt 0 ] 
+do 
+        k=$(expr $n % 10) 
+        num=$(expr $num \* 10 + $k) 
+        n=$(expr $n / 10) 
+done 
+if [ $num -eq $a ] 
+then 
+        echo palindrome. 
+else 
+        echo not a palindrome.
+fi
+
+
+
+
+
+                                                                                        x-x
+
+
+
+
+
+
+
+
+3 A)-TO WRITE A SHELL SCRIPT TO FIND FACTORIAL OF GIVEN NUMBER USING LOOP:[opmtherla]
+
+echo "Enter the number : "
+read n
+i=1
+sum=0
+echo "Enter the numbers"
+while [ $i -le $n ]
+do
+  read num
+  sum=$((sum + num))
+  i=$((i + 1))
+done
+echo "sum = $sum"
+
+
+
+
+
+
+                                                                                              X-FACTORIAL USING FOR LOOP-X
+
+
+
+
+
+
+
+
+
+3 B)-FIND THE SUM OF NUMBER N USING LOOP(factorial):[op therla]
+
+
+echo "Enter the number : "
+read n
+fact=1
+for((i=2;i<=n;i++))
+do
+fact=$((fact*i))
+done
+echo "Factorial = $fact"
+
+
+
+
+
+
+
+                                                                                              X-SUM OF NUMBER-X
+
+
+
+
+
+
+
+3 C)-WRITE A PROGRAM TO IMPLEMENT ARITHMATIC OPERATION:
+
+
+echo "Enter two numbers: "
+read a 
+read b 
+echo "MENU 1. Addition 2. Subtraction 3. Multiplication 4. Division"
+echo "Enter the choice:"
+read c
+case $c in
+1)echo "Sum=$(expr $a + $b)";;
+2) echo "Subtraction=$(expr $a - $b)";;
+3)echo "Multiplication=$(expr $a * $b)";;
+4)echo "Division=$(expr $a / $b)";; 
+5) echo ""Invalid Choice: Try Again
+esac
+
+
+
+
+
+
+                                                                                                   X-IMPLENENT MENU-X
+
+
+
+
+
+
+
+
+
+3 D)-PRINT THE FOLLOWING PATTERN:
+
+echo "Enter the number of rows : "
+read r
+i=1 
+t=1 
+while [ $i -le $r ]
+do
+  j=1 
+  while [ $j -le $i ]
+  do
+    echo -n "*"
+    j=$((j+1))
+  done
+  echo 
+  i=$((i+1))
+done
+
+
+
+
+
+
+
+
+
+                                                                                              X-PRINT PATTERNS-X
+
+
+
+
+
+
+
+
+4 A)-FILE HANDLING OF UPPER TO LOWER CASE:
+
+
+touch ELF.txt
+echo "Enter the Filename"
+read filename
+if [  !  -f  $filename ];
+then
+echo "Filename $filename does not exists"
+exit 1
+else
+echo "$filename" | tr '[:upper:]' '[:lower:]'
+fi
+
+
+
+
+
+
+                                                                                   x-UPPER CASE LOWER CASE(FILE HANDLING FUNCTION)-x
+
+
+
+
+
+
+
+
+4 B)-COUNT NUMBER OF CHARACTER WORDS:
+
+count_no_char.sh:
+
+echo Enter the filename
+read file
+c=`cat $file | wc -c`
+w=`cat $file | wc -w`
+l=`grep -c "." $file`
+echo Number of characters in $file is $c
+echo Number of words in $file is $w
+echo Number of lines in $file is $l
+
+
+
+
+
+
+                                                                                              x-COUNT NO CHAR WORDS-x
+
+
+
+
+
+4 C)-CHECK THE FILE EXIST OR NOT:
+
+file_existornot.sh:
+
+echo "enter the file name :"
+read filename
+if [ -f $filename ]
+then
+echo "file exists"
+else
+echo "file doesn't exist"
+fi
+
+
+
+
+
+
+
+                                                                                              x-file exist or not-x
+
+
+
+
+
+
+
+
+5)-MANIPLUTATE DATE/TIME/CALENDER:
+
+current_date=$(date)
+echo "Current date and time: $current_date"
+
+
+current_date_only=$(date +"%Y-%m-%d")
+echo "Current date only: $current_date_only"
+
+
+current_time_only=$(date +"%H:%M:%S")
+echo "Current time only: $current_time_only"
+
+
+days_to_add=7
+future_date=$(date -d "+$days_to_add days" +"%Y-%m-%d")
+echo "Date $days_to_add days from now: $future_date"
+specific_month=9
+specific_year=2023
+cal $specific_month $specific_year
+specific_date="2023-09-10"
+day_of_week=$(date -d "$specific_date" +"%A")
+echo "Day of the week for $specific_date: $day_of_week"
+
+
+
+
+
+
+                                                                                              X-DATE/TIME/CALENDER-x
+
+
+
+
+
+
+
+
+6)-SHOWING VARIOUS SYSTEM INFORMATION:
+
+showing_system_info.sh:
+
+echo "SYSTEM INFORMATION"
+echo “Hello ,$LOGNAME”
+echo “Current Date is = $(date)”
+echo “User is ‘who I am’”
+echo “Current Directory = $(pwd)”
+echo "Network Name and Node Name = $(uname -n)"
+echo "Kernal Name =$(uname -s)"
+echo "Kernal Version=$(uname -v)"
+echo "Kernal Release =$(uname -r)"
+echo "Kernal OS =$(uname -o)"
+echo “Proessor Type = $(uname -p)”
+echo “Kernel Machine Information = $(uname –m)”
+echo "All Information =$(uname -a)"
+
+
+
+
+
+                                                                                              X-SYSTEM INFO-X
+
+
+
+
